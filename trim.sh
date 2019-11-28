@@ -14,7 +14,7 @@ trim(){
 }
 
 
-#trim
+
 
 
 align(){
@@ -26,10 +26,16 @@ align(){
 		        --local --no-unal \
 		        -x /Users/epigencare/Documents/genomes/chipGenomes/Danio_rerio/UCSC/danRer10/Sequence/Bowtie2Index/genome \
 		        -U $i \
-		        -S ${iSUB}.sam ) 2>${i}.log
+		        -S ${iSUB}.sam ) 2>${iSUB}.log
 
 		done
 
 }
 
+
+
+
+
+
+#trim
 align
