@@ -38,4 +38,32 @@ align(){
 
 
 #trim
-align
+#align
+
+# for i in *.sam
+# do
+# 	samtools view -@ 24 -b -h -F 0x0100 -O BAM  $i -o $(basename $i .sam).bam
+
+# done
+
+
+for i in *.bam
+	do
+  		samtools sort $i > $(basename $i .bam).sorted.bam
+	done
+
+
+
+for i in *.sorted.bam
+	do
+		samtools index $i
+	done
+
+
+for i in *.sorted.bam
+do
+  samtools flagstat $i > $(basename  $i .sorted.bam).flagstat
+  samtools idxstats $i > $(basename  $i .sorted.bam).idxstats
+done
+
+
